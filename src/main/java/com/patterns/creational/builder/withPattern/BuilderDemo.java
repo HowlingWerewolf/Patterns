@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BuilderDemo {
 
-    private static final int RADIUS = 15;
+    private static final int WHEELRADIUS = 15;
     private static final int HEIGHT = 60;
     private static final int WIDTH = 195;
 
@@ -37,7 +37,7 @@ public class BuilderDemo {
 
     private static Tyre createTyre() {
         return Tyre.builder()
-                .wheelRadius(RADIUS)
+                .wheelRadius(WHEELRADIUS)
                 .width(WIDTH)
                 .height(HEIGHT)
                 .build();
