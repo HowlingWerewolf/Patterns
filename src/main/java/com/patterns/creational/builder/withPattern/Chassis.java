@@ -1,10 +1,12 @@
 package com.patterns.creational.builder.withPattern;
 
 import lombok.Setter;
+import lombok.ToString;
 
 import java.awt.*;
 
 @Setter
+@ToString
 public class Chassis {
 
     Color color;
@@ -36,14 +38,6 @@ public class Chassis {
             return chassis;
         }
 
-    }
-
-    @Override
-    public String toString() {
-        return "Chassis{" +
-                "color=" + color +
-                ", modelType='" + modelType + '\'' +
-                '}';
     }
 
 }

@@ -1,14 +1,16 @@
 package com.patterns.creational.builder.withPattern;
 
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
 @Setter
+@ToString
 public class Car {
 
     Engine engine;
-    List<Wheel> wheels;
+    List<Tyre> tyres;
     Chassis chassis;
 
     public static CarBuilder builder() {
@@ -28,8 +30,8 @@ public class Car {
             return this;
         }
 
-        public CarBuilder wheels(List<Wheel> wheels) {
-            car.setWheels(wheels);
+        public CarBuilder wheels(List<Tyre> tyres) {
+            car.setTyres(tyres);
             return this;
         }
 
@@ -42,15 +44,6 @@ public class Car {
             return car;
         }
 
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "engine=" + engine +
-                ", wheels=" + wheels +
-                ", chassis=" + chassis +
-                '}';
     }
 
 }

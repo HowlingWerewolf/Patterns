@@ -13,9 +13,9 @@ public class BuilderDemo {
     public static void main(String[] args) {
         Engine v6 = Engine.V6;
 
-        List<Wheel> wheels = new ArrayList<>(4);
+        List<Tyre> tyres = new ArrayList<>(4);
         for (int i = 0; i < 4; i++) {
-            wheels.add(getWheel());
+            tyres.add(getWheel());
         }
 
         Chassis chassis = Chassis.builder()
@@ -25,7 +25,7 @@ public class BuilderDemo {
 
         Car car = Car.builder()
                 .engine(v6)
-                .wheels(wheels)
+                .wheels(tyres)
                 .chassis(chassis)
                 .build();
 
@@ -35,9 +35,9 @@ public class BuilderDemo {
         // don't write manually Builders anymore
     }
 
-    private static Wheel getWheel() {
-        return Wheel.builder()
-                .radius(RADIUS)
+    private static Tyre getWheel() {
+        return Tyre.builder()
+                .wheelRadius(RADIUS)
                 .width(WIDTH)
                 .height(HEIGHT)
                 .build();

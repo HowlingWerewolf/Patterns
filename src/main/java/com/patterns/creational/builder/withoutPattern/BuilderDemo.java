@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BuilderDemo {
 
-    private static final int RADIUS = 15;
+    private static final int WHEEL_RADIUS = 15;
     private static final int HEIGHT = 60;
     private static final int WIDTH = 195;
 
@@ -16,16 +16,16 @@ public class BuilderDemo {
         Engine engine = Engine.V6;
         car.setEngine(engine);
 
-        List<Wheel> wheels = new ArrayList<>(4);
-        Wheel wheel = new Wheel();
-        wheel.setRadius(RADIUS);
-        wheel.setWidth(WIDTH);
-        wheel.setHeight(HEIGHT);
-        wheels.add(wheel);
-        wheels.add(wheel.copy());
-        wheels.add(wheel.copy());
-        wheels.add(wheel.copy());
-        car.setWheels(wheels);
+        List<Tyre> tyres = new ArrayList<>(4);
+        Tyre tyre = new Tyre();
+        tyre.setWheelRadius(WHEEL_RADIUS);
+        tyre.setWidth(WIDTH);
+        tyre.setHeight(HEIGHT);
+        tyres.add(tyre);
+        tyres.add(tyre.copy());
+        tyres.add(tyre.copy());
+        tyres.add(tyre.copy());
+        car.setTyres(tyres);
 
 
         Chassis chassis = new Chassis();
