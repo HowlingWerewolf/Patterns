@@ -15,7 +15,7 @@ public class BuilderDemo {
 
         List<Tyre> tyres = new ArrayList<>(4);
         for (int i = 0; i < 4; i++) {
-            tyres.add(getWheel());
+            tyres.add(createTyre());
         }
 
         Chassis chassis = Chassis.builder()
@@ -35,7 +35,7 @@ public class BuilderDemo {
         // don't write manually Builders anymore
     }
 
-    private static Tyre getWheel() {
+    private static Tyre createTyre() {
         return Tyre.builder()
                 .wheelRadius(RADIUS)
                 .width(WIDTH)

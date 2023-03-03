@@ -12,7 +12,8 @@ public class Tyre {
     public int height;
 
     // I'm just lazy
-    Tyre copy() {
+    @Override
+    public Tyre clone() {
         Tyre copyOfTyre = new Tyre();
         copyOfTyre.setWheelRadius(this.wheelRadius);
         copyOfTyre.setWidth(this.width);

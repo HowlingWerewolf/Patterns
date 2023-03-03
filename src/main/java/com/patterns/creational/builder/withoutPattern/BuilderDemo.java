@@ -22,9 +22,9 @@ public class BuilderDemo {
         tyre.setWidth(WIDTH);
         tyre.setHeight(HEIGHT);
         tyres.add(tyre);
-        tyres.add(tyre.copy());
-        tyres.add(tyre.copy());
-        tyres.add(tyre.copy());
+        tyres.add(tyre.clone());
+        tyres.add(tyre.clone());
+        tyres.add(tyre.clone());
         car.setTyres(tyres);
 
 
