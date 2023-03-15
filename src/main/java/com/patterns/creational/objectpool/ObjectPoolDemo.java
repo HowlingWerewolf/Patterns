@@ -17,8 +17,8 @@ public class ObjectPoolDemo {
                     Resource resource = objectPool.getResource();
                     while (resource == null) {
                         System.out.println(Timestamp.from(new Date().toInstant()) + " - Waiting for resource at TASK " + taskNr);
+                        Thread.sleep(2000);
                         resource = objectPool.getResource();
-                        Thread.sleep(500);
                     }
                     System.out.println(Timestamp.from(new Date().toInstant()) + " - Starting TASK " + taskNr);
                     resource.startTask("TASK " + taskNr, 5000L);

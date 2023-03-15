@@ -16,8 +16,8 @@ public class ObjectPool {
     public List<Resource> resources = new ArrayList<>();
 
     public synchronized Resource getResource() {
-        System.out.println("Size of pool: " + resources.size());
-        System.out.println("Content of pool: " + resources);
+//        System.out.println("Size of pool: " + resources.size());
+//        System.out.println("Content of pool: " + resources);
 
         final Optional<Resource> idleResource = resources.stream().filter(Resource::isAvailable).findFirst();
         if (idleResource.isPresent()) {
@@ -26,7 +26,9 @@ public class ObjectPool {
         }
 
         if (resources.size() < MAX_SIZE) {
-            Resource newResource = new Resource(resources.size() + " - " + Timestamp.from(new Date().toInstant()));
+            final String name = resources.size() + " - " + Timestamp.from(new Date().toInstant());
+            System.out.println("Pool is not full, adding a new resource with name " + name);
+            Resource newResource = new Resource(name);
             resources.add(newResource);
             return newResource;
         }
