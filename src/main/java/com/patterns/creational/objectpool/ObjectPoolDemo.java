@@ -10,7 +10,7 @@ public class ObjectPoolDemo {
     public static long taskLength = 5000L;
 
     public static void main(String[] args) throws InterruptedException {
-        final ObjectPool objectPool = new ObjectPool();
+        final ObjectPool objectPool = ObjectPool.getInstance();
         final List<String> tasks = List.of("TASK A", "TASK B", "TASK C", "TASK D", "TASK E", "TASK F");
 
         for (String task : tasks) {
@@ -24,7 +24,7 @@ public class ObjectPoolDemo {
                         resource = objectPool.getIdleResource(taskLength);
                     }
                     resource.setTaskName(task);
-                    System.out.println(TimestampHelper.get() + "Starting " + task);
+                    System.out.println(TimestampHelper.get() + "Starting " + task + " with " + resource.getName());
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

@@ -5,13 +5,23 @@ import com.patterns.creational.objectpool.util.TimestampHelper;
 
 import java.util.*;
 
-// TODO Make this singleton
 public class ObjectPool {
+
+    public static ObjectPool instance;
 
     private int MAX_SIZE = 2;
 
     public List<Resource> available = Collections.synchronizedList(new ArrayList<>());
     public List<Resource> unavailable = Collections.synchronizedList(new ArrayList<>());
+
+    private ObjectPool() {}
+
+    public static ObjectPool getInstance() {
+        if (instance == null) {
+            instance = new ObjectPool();
+        }
+        return instance;
+    }
 
     public synchronized Resource getIdleResource(final long executionTimeInMillis) {
         final Optional<Resource> idleResource = available.stream().findFirst();
