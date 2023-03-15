@@ -1,33 +1,36 @@
 package com.patterns.creational.objectpool;
 
 import com.patterns.creational.objectpool.entity.Resource;
+import com.patterns.creational.objectpool.util.TimestampHelper;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.util.List;
 
 public class ObjectPoolDemo {
 
+    public static long taskLength = 5000L;
+
     public static void main(String[] args) throws InterruptedException {
         final ObjectPool objectPool = new ObjectPool();
-        for (int i = 0; i < 6; i++) {
-            final int taskNr = i;
+        final List<String> tasks = List.of("TASK A", "TASK B", "TASK C", "TASK D", "TASK E", "TASK F");
+
+        for (String task : tasks) {
             final Thread thread = new Thread(() -> {
                 try {
-                    System.out.println(Timestamp.from(new Date().toInstant()) + " - Initializing TASK " + taskNr);
-                    Resource resource = objectPool.getResource();
+                    System.out.println(TimestampHelper.get() + "Initializing " + task);
+                    Resource resource = objectPool.getIdleResource(taskLength);
                     while (resource == null) {
-                        System.out.println(Timestamp.from(new Date().toInstant()) + " - Waiting for resource at TASK " + taskNr);
-                        Thread.sleep(2000);
-                        resource = objectPool.getResource();
+                        System.out.println(TimestampHelper.get() + "Waiting for resource at " + task);
+                        Thread.sleep(3000);
+                        resource = objectPool.getIdleResource(taskLength);
                     }
-                    System.out.println(Timestamp.from(new Date().toInstant()) + " - Starting TASK " + taskNr);
-                    resource.startTask("TASK " + taskNr, 5000L);
+                    resource.setTaskName(task);
+                    System.out.println(TimestampHelper.get() + "Starting " + task);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             });
             thread.start();
-            Thread.sleep(1000);
+            Thread.sleep(100);
         }
     }
 
