@@ -1,4 +1,4 @@
-package com.patterns.creational.builder.withPattern;
+package org.example.patterns.creational.builder.withpattern;
 
 import lombok.Setter;
 import lombok.ToString;
@@ -7,9 +7,9 @@ import lombok.ToString;
 @ToString
 public class Tyre {
 
-    public int wheelRadius;
-    public int width;
-    public int height;
+    int wheelRadius;
+    int width;
+    int height;
 
     public static TyreBuilder builder() {
         return new TyreBuilder();
@@ -23,12 +23,12 @@ public class Tyre {
             tyre = new Tyre();
         }
 
-        public TyreBuilder wheelRadius(int wheelRadius) {
+        public TyreBuilder wheelRadius(final int wheelRadius) {
             tyre.setWheelRadius(wheelRadius);
             return this;
         }
 
-        public TyreBuilder width(int width) {
+        public TyreBuilder width(final int width) {
             tyre.setWidth(width);
             return this;
         }

@@ -1,4 +1,4 @@
-package com.patterns.creational.builder.withPattern;
+package org.example.patterns.creational.builder.withpattern;
 
 import lombok.Setter;
 import lombok.ToString;
@@ -24,12 +24,12 @@ public class Chassis {
             chassis = new Chassis();
         }
 
-        public ChassisBuilder color(Color color) {
+        public ChassisBuilder color(final Color color) {
             chassis.setColor(color);
             return this;
         }
 
-        public ChassisBuilder modelType(String modelType) {
+        public ChassisBuilder modelType(final String modelType) {
             chassis.setModelType(modelType);
             return this;
         }

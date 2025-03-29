@@ -1,4 +1,4 @@
-package com.patterns.creational.builder.withoutPattern;
+package org.example.patterns.creational.builder.withoutpattern;
 
 import lombok.Setter;
 import lombok.ToString;
