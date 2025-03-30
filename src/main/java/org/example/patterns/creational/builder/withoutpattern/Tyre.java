@@ -1,4 +1,4 @@
-package com.patterns.creational.builder.withoutPattern;
+package org.example.patterns.creational.builder.withoutpattern;
 
 import lombok.Setter;
 import lombok.ToString;
@@ -7,9 +7,9 @@ import lombok.ToString;
 @ToString
 public class Tyre {
 
-    public int wheelRadius;
-    public int width;
-    public int height;
+    int wheelRadius;
+    int width;
+    int height;
 
     // I'm just lazy
     @Override
