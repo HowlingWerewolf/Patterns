@@ -1,4 +1,4 @@
-package com.patterns.creational.builder.withPattern;
+package org.example.patterns.creational.builder.withpattern;
 
 import lombok.Setter;
 import lombok.ToString;
@@ -25,17 +25,17 @@ public class Car {
             car = new Car();
         }
 
-        public CarBuilder engine(Engine engine) {
+        public CarBuilder engine(final Engine engine) {
             car.setEngine(engine);
             return this;
         }
 
-        public CarBuilder wheels(List<Tyre> tyres) {
+        public CarBuilder wheels(final List<Tyre> tyres) {
             car.setTyres(tyres);
             return this;
         }
 
-        public CarBuilder chassis(Chassis chassis) {
+        public CarBuilder chassis(final Chassis chassis) {
             car.setChassis(chassis);
             return this;
         }
