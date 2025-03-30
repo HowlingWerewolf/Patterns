@@ -7,6 +7,7 @@ Creational patterns:
 - Abstract factory
 - Builder
 - Factory method
+- Prototype
 - Singleton
 
 

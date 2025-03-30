@@ -1,4 +1,4 @@
-package com.patterns.creational.prototype.entity;
+package org.example.patterns.creational.prototype.entity;
 
 public class Kitt implements Car {
 
