@@ -1,4 +1,4 @@
-package com.patterns.creational.objectpool.util;
+package org.example.patterns.creational.objectpool.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

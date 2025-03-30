@@ -1,4 +1,4 @@
-package com.patterns.creational.objectpool.entity;
+package org.example.patterns.creational.objectpool.entity;
 
 public class Resource {
 
