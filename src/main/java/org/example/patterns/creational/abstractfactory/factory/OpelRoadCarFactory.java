@@ -1,9 +1,9 @@
-package com.patterns.creational.abstractfactory.factory;
+package org.example.patterns.creational.abstractfactory.factory;
 
-import com.patterns.creational.abstractfactory.entity.Chassis;
-import com.patterns.creational.abstractfactory.entity.Engine;
-import com.patterns.creational.abstractfactory.entity.Tyre;
-import com.patterns.creational.abstractfactory.entity.Windows;
+import org.example.patterns.creational.abstractfactory.entity.Chassis;
+import org.example.patterns.creational.abstractfactory.entity.Engine;
+import org.example.patterns.creational.abstractfactory.entity.Tyre;
+import org.example.patterns.creational.abstractfactory.entity.Windows;
 
 import java.awt.*;
 
@@ -18,7 +18,7 @@ public class OpelRoadCarFactory implements AbstractCarFactory {
 
     @Override
     public Tyre createTyre() {
-        Tyre tyre = new Tyre();
+        final Tyre tyre = new Tyre();
         tyre.setWheelRadius(WHEELRADIUS);
         tyre.setHeight(HEIGHT);
         tyre.setWidth(WIDTH);
@@ -27,7 +27,7 @@ public class OpelRoadCarFactory implements AbstractCarFactory {
 
     @Override
     public Chassis createChassis() {
-        Chassis chassis = new Chassis();
+        final Chassis chassis = new Chassis();
         chassis.setColor(Color.WHITE);
         chassis.setModelType("Opel");
         return chassis;
@@ -40,7 +40,7 @@ public class OpelRoadCarFactory implements AbstractCarFactory {
 
     @Override
     public Windows createWindows() {
-        Windows windows = new Windows();
+        final Windows windows = new Windows();
         windows.setShape("trapezoid");
         windows.setHeight(60);
         windows.setWidth(90);

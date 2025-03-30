@@ -1,4 +1,4 @@
-package com.patterns.creational.abstractfactory.entity;
+package org.example.patterns.creational.abstractfactory.entity;
 
 import lombok.Setter;
 import lombok.ToString;
