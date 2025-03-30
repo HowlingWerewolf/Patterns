@@ -1,23 +1,26 @@
-package com.patterns.creational.builder.withoutPattern;
+package org.example.patterns.creational.builder.withoutpattern;
 
-import java.awt.*;
+import lombok.extern.java.Log;
+
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log
 public class BuilderDemo {
 
     private static final int WHEEL_RADIUS = 15;
     private static final int HEIGHT = 60;
     private static final int WIDTH = 195;
 
-    public static void main(String[] args) {
-        Car car = new Car();
+    public static void main(final String[] args) {
+        final Car car = new Car();
 
-        Engine engine = Engine.V6;
+        final Engine engine = Engine.V6;
         car.setEngine(engine);
 
-        List<Tyre> tyres = new ArrayList<>(4);
-        Tyre tyre = new Tyre();
+        final List<Tyre> tyres = new ArrayList<>(4);
+        final Tyre tyre = new Tyre();
         tyre.setWheelRadius(WHEEL_RADIUS);
         tyre.setWidth(WIDTH);
         tyre.setHeight(HEIGHT);
@@ -33,7 +36,7 @@ public class BuilderDemo {
         chassis.setModelType("Opel Astra H");
         car.setChassis(chassis);
 
-        System.out.println(car);
+        log.info(car.toString());
     }
     
 }
