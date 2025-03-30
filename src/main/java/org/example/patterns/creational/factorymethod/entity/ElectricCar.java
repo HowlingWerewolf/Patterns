@@ -1,6 +1,6 @@
-package com.patterns.creational.factorymethod.entity;
+package org.example.patterns.creational.factorymethod.entity;
 
-import com.patterns.creational.factorymethod.entity.reloading.ElectricStorage;
+import org.example.patterns.creational.factorymethod.entity.reloading.ElectricStorage;
 import lombok.Getter;
 
 @Getter

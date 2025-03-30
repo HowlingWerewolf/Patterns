@@ -1,4 +1,4 @@
-package com.patterns.creational.factorymethod.entity.reloading;
+package org.example.patterns.creational.factorymethod.entity.reloading;
 
 public interface Reloadable {
 
