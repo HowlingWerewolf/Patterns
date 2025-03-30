@@ -1,13 +1,15 @@
-package com.patterns.creational.singleton;
+package org.example.patterns.creational.singleton;
 
-import com.patterns.creational.singleton.entity.Car;
-import com.patterns.creational.singleton.entity.Chassis;
+import lombok.extern.java.Log;
+import org.example.patterns.creational.singleton.entity.Car;
+import org.example.patterns.creational.singleton.entity.Chassis;
 
 import java.awt.*;
 
+@Log
 public class KittSingleton extends Car {
 
-    public static KittSingleton instance;
+    static KittSingleton instance;
 
     private KittSingleton() {}
 
@@ -19,10 +21,10 @@ public class KittSingleton extends Car {
                     .color(Color.BLACK).build());
 
             // some signal to check that this instance is created only once
-            System.out.println("I'm alive!");
+            log.info("I'm alive!");
         }
 
-        System.out.println("I'm coming, Michael!");
+        log.info("I'm coming, Michael!");
         return instance;
     }
 

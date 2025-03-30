@@ -1,4 +1,4 @@
-package com.patterns.creational.singleton.entity;
+package org.example.patterns.creational.singleton.entity;
 
 import lombok.Builder;
 import lombok.Setter;
